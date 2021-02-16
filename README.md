@@ -1,1 +1,1 @@
-# js-share-buttons
+# Share Buttons (Vanilla JS)
