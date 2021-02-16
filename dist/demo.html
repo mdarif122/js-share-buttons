@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	
+	<title>Demo of the Share Buttons</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="share-buttons.css">
+
+	<!-- Styles just for demo -->
+	<style>
+		body {
+			font: 14px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;
+			margin:0;
+			padding:0;
+			background: #bffcfc;
+		}
+
+		.wrapper {
+			padding: 100px 60px;
+			text-align: center;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="wrapper">
+		<h2>Share button default mode on top center</h2>
+		<div id="share-button-1" class="arif-share-button-default" data-share-position="topCenter"></div>
+		<h2>Share button box mode with chosen networks</h2>
+		<div id="share-button-2" class="arif-share-button-default" data-share-icon-style="box" data-share-networks="Mailto,Twitter,Pinterest,Facebook,GooglePlus,Linkedin"></div>
+		<h2>Share button default mode on middle right</h2>
+		<div id="share-button-3" class="arif-share-button-default" data-share-position="middleRight" data-share-networks="Mailto,Twitter,Pinterest,Facebook,GooglePlus,Linkedin"></div>
+		<h2>Share button box mode on middle right</h2>
+		<div id="share-button-4" class="arif-share-button-default" data-share-position="middleRight" data-share-icon-style="box" data-share-networks="Mailto,Twitter,Pinterest,Facebook,GooglePlus,Linkedin"></div>
+		<h2>Share button with custom button</h2>
+		<div id="share-button-5" class="arif-share-button-default" data-share-position="topCenter" data-share-share-button-class="custom-button"><span class="custom-button"><strong>Share it</strong></span></div>
+	</div>
+
+	<script src="share-buttons.js"></script>
+	<script>  
+		new shareButtons(document.getElementById('share-button-1'));
+		new shareButtons(document.getElementById('share-button-2'));
+		new shareButtons(document.getElementById('share-button-3'));
+		new shareButtons(document.getElementById('share-button-4'));
+		new shareButtons(document.getElementById('share-button-5'));
+	</script>
+</body>
+</html>
