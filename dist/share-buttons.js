@@ -1,6 +1,6 @@
 /*********************************************** 
  * Author : Md Ariful Islam (Github: https://github.com/mdarif122)
- * Source : 
+ * Source : https://github.com/mdarif122/js-share-buttons
  * Version 1.0.0
  * Licensed under MIT (http://opensource.org/licenses/MIT)
 ***********************************************/
@@ -18,20 +18,25 @@
 		arif.getTitle = function() {
 			var content;
 			// check querySelector existance for old browsers
-			if (document.querySelector) {
-				if (content = document.querySelector('meta[property="og:title"]') || document.querySelector('meta[name="twitter:title"]')) {
-				return content.getAttribute('content');
-				} else if (content = document.querySelector('title')) {
-				return content.innerText;
+			if (document.querySelector) 
+			{
+				if (content = document.querySelector('meta[property="og:title"]') || document.querySelector('meta[name="twitter:title"]')) 
+				{
+					return content.getAttribute('content');
+				} else 
+				if (content = document.querySelector('title')) 
+				{
+					return content.innerText;
 				} else
 					return '';
-			} else {
+			} else 
+			{
 				if (content = document.title)
 				return content.innerText;
 				else
 					return '';
 			}
-		8};
+		};
 
 		//-get image from html 
 		arif.getImage = function() {
@@ -87,7 +92,7 @@
 			},
 			'facebook' : function() {
 				var url = arif.options.protocol + 'www.facebook.com/sharer/sharer.php?';
-				url += 'u=' + encodeURIComponent(arif.options.url);
+				url += 'u=' + arif.options.url;
 				url += '&title=' + encodeURIComponent(arif.options.title);
 
 				arif.popup(url);
@@ -114,6 +119,19 @@
 				url += '&source=' + encodeURIComponent(arif.options.source);
 
 				arif.popup(url);
+			},
+			'whatsapp' : function() {
+				var url;
+				//- check if the device is mobile or not
+				if(typeof window.orientation !== 'undefined')
+					url = 'whatsapp://send?';
+				else
+					url = "https://web.whatsapp.com/send?"
+
+				url += 'text=' + encodeURIComponent(arif.options.url);
+				
+				//return console.log(url)
+		  		arif.popup(url);
 			},
 			'tumblr' : function() {
 				var url = arif.options.protocol + 'www.tumblr.com/share?v=3';
@@ -207,7 +225,7 @@
 			title: arif.getTitle(),
 			image: arif.getImage(),
 			description: arif.getDescription(),
-			networks: 'Mailto,Twitter,Pinterest,Facebook,Reddit,Linkedin,Tumblr,Mailru'
+			networks: 'Mailto,Twitter,Pinterest,Facebook,Reddit,Linkedin,Whatsapp,Tumblr,Mailru'
 		}
 
 		//-integrate custom options

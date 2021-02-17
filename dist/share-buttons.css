@@ -1,6 +1,6 @@
 /*********************************************** 
  * Author : Md Ariful Islam (Github: https://github.com/mdarif122)
- * Source : 
+ * Source : https://github.com/mdarif122/js-share-buttons
  * Version 1.0.0
  * Licensed under MIT (http://opensource.org/licenses/MIT)
 ***********************************************/
@@ -296,13 +296,13 @@
 
   background: #026664;
 }
-.arif-share-button_technorati {
+.arif-share-button_whatsapp {
   color: #49ae47;
 }
-.arif-share-button_technorati:after {
+.arif-share-button_whatsapp:after {
   content: '\e807';
 }
-.arif-share-button_technorati.arif-share-button_link-box {
+.arif-share-button_whatsapp.arif-share-button_link-box {
   color: #fff;
 
   background: #49ae47;
